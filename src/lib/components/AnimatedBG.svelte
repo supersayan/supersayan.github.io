@@ -1,16 +1,11 @@
 <script lang="ts">
 	import Delaunator from 'delaunator';
 	import { onMount } from 'svelte';
-	// @ts-ignore
-	import * as TWEEN from '@tweenjs/tween.js';
 	import { gsap } from 'gsap';
 
 	// canvas setting
 	let canvas: HTMLCanvasElement;
 	let ctx: CanvasRenderingContext2D | null;
-
-	let timeStep = 1 / 60;
-	let time = 0;
 
 	let mousePosition = [0, 0];
 
@@ -31,7 +26,7 @@
 			mousePosition[1] = e.clientY - r.top;
 		});
 
-		window.addEventListener('resize', function (e) {
+		window.addEventListener('resize', function () {
 			if (canvas === null) return;
 			canvas.width = window.innerWidth;
 			canvas.height = window.innerHeight;
@@ -111,7 +106,6 @@
 
 	function render() {
 		draw();
-		time += timeStep;
 		requestAnimationFrame(render);
 	}
 
