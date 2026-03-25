@@ -2,11 +2,11 @@
 	import AnimatedBG from '$lib/components/AnimatedBG.svelte';
 
 	import { fade } from 'svelte/transition';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
 	import '$lib/css/global.scss';
 
-	const segment = $page.url.pathname;
+	const segment = page.url.pathname;
 </script>
 
 <div class="layout" in:fade={{ delay: 1000, duration: 1000 }} out:fade={{ duration: 1000 }}>

@@ -1,5 +1,5 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 </script>
 
 <style>
@@ -19,8 +19,8 @@
 </style>
 
 <svelte:head>
-	<title>{$page.status}</title>
+	<title>{page.status}</title>
 </svelte:head>
 
-<h1>{$page.status}</h1>
-<h1>{$page.error?.message}</h1>
+<h1>{page.status}</h1>
+<h1>{page.error?.message}</h1>
